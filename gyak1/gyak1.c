@@ -9,13 +9,14 @@ void sleepTest();
 int Random();
 int randomintervallum(int min, int max);
 void szamolas();
+void primek();
 
 
 int main()
 {
     srand(time(NULL));
     padding();
-    sleep();
+    sleepTest();
     printf("Sorsolt szam 500 es 1000 kozott:\n");
         printf("%d\n", Random());
     int min = 231;
@@ -23,6 +24,11 @@ int main()
     printf("Sorsolt szam %d es %d kozott:\n", min, max);
         printf("%d\n", randomintervallum(min, max));
     szamolas();
+    primek(1000);
+    primek(2000);
+    primek(5000);
+    primek(10000);
+    primek(20000);
     return 0;
 }
 
@@ -34,7 +40,7 @@ void padding()
     printf("%*d\n", 8, 12345678);
 }
 
-void sleep()
+void sleepTest()
 {
     printf("1 sec delay\n");
     Sleep(1000);
@@ -79,3 +85,23 @@ void szamolas()
     printf("Szamolas ideje %f mp\n", time_taken);
 }
 
+void primek(int tombmeret)
+{
+    int counter = 0;
+    clock_t time = clock();
+    for (int i = 2; i < tombmeret; i++)
+    {
+        int flag = 0;
+        for (int j = 2; j <= i / 2; ++j) {
+            if (i % j == 0) {
+                flag = 1;
+                break;
+            }
+        }
+        if (flag == 0) counter++;
+    }
+    time = clock()-time;
+    double time_taken = ((double)time)/CLOCKS_PER_SEC;
+    printf("primek szama %d-ig: %d\n", tombmeret, counter);
+    printf("%f sec telt el\n", time_taken);
+}
