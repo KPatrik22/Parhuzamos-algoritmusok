@@ -1,1 +1,1 @@
-# Parhuzamos-algoritmusok
+# Párhuzamos algoritmusok
