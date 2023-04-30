@@ -98,7 +98,6 @@ void meresMaxMan(int * tomb, int meret)
 }
 
 
-
 int osszeg(int * tomb, int meret)
 {
     int sum = 0;
@@ -148,3 +147,4 @@ int find_max(int *a,int n)
         m_max=a[n-1];
     return m_max;
 }
+
