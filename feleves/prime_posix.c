@@ -6,8 +6,8 @@
 
 const int THREADS = 8;
 
-int n_low = pow(2,0);
-int n_high = pow(2,16);
+int n_low = 1;
+int n_high = 65536; //2^16
 int n_factor = 2;
 
 int isprime(int num);
