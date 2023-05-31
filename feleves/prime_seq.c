@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #include<time.h>
 
-#define N 20
+#define N 16
 
 int isprime(int num);
   
@@ -11,14 +11,16 @@ int main()
 {  
 	int limit;
     int count = 0;
-    clock_t time = clock();	
+    clock_t time = clock();
+    double time_taken;	
 
     for (int i = 1; i <= N; i++)
     {
         limit = pow(2,i);
         for (int j = 2; j <= limit; j++)
         {    
-            if (isprime(j)){
+            if (isprime(j))
+            {
                 count++;
 			}
         }
@@ -26,7 +28,7 @@ int main()
         count = 0;
     }  
     time = clock()-time;
-    double time_taken = ((double)time)/CLOCKS_PER_SEC;
+    time_taken = ((double)time)/CLOCKS_PER_SEC;
 	printf("\n Runtime: %f sec", time_taken);
   
     return 0;  
