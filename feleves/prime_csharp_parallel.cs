@@ -20,21 +20,7 @@ namespace Prime
             stopwatch.Start();
             
             prime_number_sweep(int n_low, int n_high, int n_factor);
-            
-            for(int i = 1; i <= n; i++)
-            {
-                limit = Math.Pow(2,i);
-                for (int j = 2; j <= limit; j++)
-                {    
-                    if (isprime(j))
-                    {
-                        count++;
-                    }
-                }
-                Console.WriteLine($"From 1 to 2^{i}: {count} prime numbers");
-                count = 0;
-            }  
-        
+
             stopwatch.Stop();
             TimeSpan stopwatchElapsed = stopwatch.Elapsed;
             Console.Write("\nRuntime: ");
